@@ -15,23 +15,74 @@
     </p>
 
     <h2>Tools Used</h2>
-    <p>WSL Ubuntu, Ansible, AWS EC2, Docker and Nginx</p>
+    <p>
+        WSL Ubuntu, Ansible, AWS EC2, Docker and Nginx
+    </p>
 
-    <h2>Process</h2>
+    <h2>Workflow</h2>
+
+    <pre>
+WSL Ubuntu
+     |
+     | SSH
+     v
+AWS EC2 Ubuntu
+     |
+     v
+Docker
+     |
+     v
+Nginx Container
+     |
+     v
+Port 80
+    </pre>
+
+    <h2>Steps Performed</h2>
+
     <ol>
         <li>Configured Ubuntu on WSL as the Ansible controller.</li>
         <li>Configured the EC2 server in the Ansible inventory.</li>
         <li>Tested the connection using the Ansible ping module.</li>
-        <li>Created an Ansible playbook to install Docker.</li>
+        <li>Created an Ansible playbook for Docker installation.</li>
         <li>Started and enabled the Docker service.</li>
-        <li>Used the playbook to pull the Nginx image.</li>
+        <li>Pulled the Nginx Docker image.</li>
         <li>Ran the Nginx container on port 80.</li>
     </ol>
 
-    <h2>Output</h2>
+    <h2>Commands Used</h2>
+
+    <pre>
+ansible -i inventory servers -m ping
+
+ansible-playbook -i inventory docker-install.yml
+
+docker images
+
+docker ps
+
+curl http://localhost
+    </pre>
+
+    <h2>Actual Output</h2>
+
     <p>
-        Docker and Nginx were successfully deployed on the EC2 instance
-        using the Ansible playbook.
+        The Ansible playbook completed successfully and Docker and Nginx
+        were deployed on the EC2 instance.
+    </p>
+
+    <h2>Verification</h2>
+
+    <p>
+        The Nginx container was running and the Nginx Welcome page was
+        successfully accessed through port 80.
+    </p>
+
+    <h2>Result</h2>
+
+    <p>
+        Docker and Nginx were successfully deployed using Ansible
+        configuration management.
     </p>
 
     <p>
