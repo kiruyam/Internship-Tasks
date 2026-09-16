@@ -1,0 +1,34 @@
+---
+- name: Install Docker and run Nginx
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Update package repository
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Pull Nginx image
+      community.docker.docker_image:
+        name: nginx
+        source: pull
+
+    - name: Run Nginx container
+      community.docker.docker_container:
+        name: nginx-container
+        image: nginx
+        state: started
+        restart_policy: unless-stopped
+        published_ports:
+          - "80:80"
