@@ -10,7 +10,7 @@
 
     <h2>Objective</h2>
     <p>
-        Create a Jenkins pipeline that pulls code from GitHub,
+        Create a Jenkins declarative pipeline that pulls code from GitHub,
         builds a Docker image and pushes it to Docker Hub.
     </p>
 
@@ -19,31 +19,51 @@
         AWS EC2, Jenkins, Git, Docker, GitHub and Docker Hub
     </p>
 
-    <h2>Pipeline</h2>
-    <p>
-        GitHub → Jenkins → Docker Build → Docker Hub
-    </p>
+    <h2>Pipeline Flow</h2>
 
-    <h2>Process</h2>
+    <pre>
+GitHub
+   |
+   v
+Jenkins
+   |
+   v
+Build Docker Image
+   |
+   v
+Push to Docker Hub
+    </pre>
+
+    <h2>Pipeline Stages</h2>
+
     <ol>
-        <li>Configured Jenkins on an AWS EC2 instance.</li>
-        <li>Connected the Jenkins job to the GitHub repository.</li>
-        <li>Configured Docker access for Jenkins.</li>
-        <li>Created a declarative Jenkins pipeline.</li>
-        <li>Built the Docker image using Jenkins.</li>
-        <li>Logged in to Docker Hub using Jenkins credentials.</li>
-        <li>Pushed the image to Docker Hub with build number and latest tags.</li>
+        <li>Clone Repository</li>
+        <li>Build Docker Image</li>
+        <li>Push to Docker Hub</li>
     </ol>
 
-    <h2>Output</h2>
+    <h2>Docker Image</h2>
+
+    <pre>
+mayuriii12/jenkins-docker-task:BUILD_NUMBER
+mayuriii12/jenkins-docker-task:latest
+    </pre>
+
+    <h2>Actual Output</h2>
+
+    <pre>
+Login Succeeded
+
+Pipeline completed successfully!
+
+Finished: SUCCESS
+    </pre>
+
+    <h2>Result</h2>
+
     <p>
         The Jenkins pipeline successfully built the Docker image
         and pushed it to Docker Hub.
-    </p>
-
-    <h2>Docker Hub</h2>
-    <p>
-        Image: mayuriii12/jenkins-docker-task
     </p>
 
     <p>
