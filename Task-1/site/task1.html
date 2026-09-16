@@ -16,16 +16,47 @@
     <h2>Tools Used</h2>
     <p>AWS EC2, Ubuntu, Docker and Nginx</p>
 
-    <h2>Output</h2>
+    <h2>Steps Performed</h2>
+
+    <ol>
+        <li>Created an AWS EC2 instance and connected to it using SSH.</li>
+        <li>Checked the Docker installation.</li>
+        <li>Updated the Ubuntu package repository.</li>
+        <li>Installed Docker.</li>
+        <li>Started the Docker service.</li>
+        <li>Tested Docker using the Hello World image.</li>
+        <li>Downloaded the Nginx Docker image.</li>
+        <li>Ran an Nginx container with port 80 exposed.</li>
+        <li>Configured HTTP access through the EC2 security group.</li>
+        <li>Opened the Nginx website using the EC2 public IP.</li>
+    </ol>
+
+    <h2>Commands Used</h2>
+
+    <pre>
+docker --version
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo docker run hello-world
+sudo docker run -d -p 80:80 nginx
+sudo docker ps
+    </pre>
+
+    <h2>Actual Output</h2>
+
+    <pre>
+Docker container running successfully
+Port mapping: 0.0.0.0:80 -> 80/tcp
+
+Nginx Welcome Page displayed successfully.
+    </pre>
+
+    <h2>Result</h2>
+
     <p>
         Nginx was successfully deployed inside a Docker container
-        and accessed through the EC2 public IP.
-    </p>
-
-    <h2>Docker</h2>
-    <p>
-        The Nginx Docker image was used and the container was exposed
-        on port 80.
+        on AWS EC2 and accessed through the public IP address.
     </p>
 
     <p>
