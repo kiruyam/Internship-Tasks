@@ -10,9 +10,8 @@
 
     <h2>Objective</h2>
     <p>
-        Connect a GitHub repository with Jenkins using a webhook
-        so that changes pushed to the main branch can trigger
-        the Jenkins pipeline.
+        Connect GitHub with Jenkins using a webhook so that changes
+        pushed to the main branch can trigger the Jenkins pipeline.
     </p>
 
     <h2>Tools Used</h2>
@@ -21,6 +20,7 @@
     </p>
 
     <h2>Pipeline Stages</h2>
+
     <ol>
         <li>Checkout</li>
         <li>Build</li>
@@ -28,19 +28,39 @@
         <li>Success</li>
     </ol>
 
-    <h2>Process</h2>
+    <h2>Webhook Configuration</h2>
+
+    <p>
+        A GitHub webhook was configured to send push events to Jenkins.
+    </p>
+
+    <h2>Steps Performed</h2>
+
     <ol>
-        <li>Created a GitHub repository for the task.</li>
-        <li>Configured the Jenkins job with the GitHub repository.</li>
+        <li>Created the GitHub repository.</li>
+        <li>Configured the Jenkins job with the repository.</li>
         <li>Configured the GitHub webhook.</li>
-        <li>Configured Jenkins to respond to the GitHub hook.</li>
-        <li>Tested the pipeline with changes pushed to the repository.</li>
+        <li>Enabled the GitHub hook trigger in Jenkins.</li>
+        <li>Pushed a change to the main branch.</li>
+        <li>Verified the Jenkins pipeline stages.</li>
     </ol>
 
-    <h2>Output</h2>
+    <h2>Actual Output</h2>
+
+    <pre>
+Checkout
+Build
+Test
+Success
+
+Finished: SUCCESS
+    </pre>
+
+    <h2>Result</h2>
+
     <p>
-        GitHub and Jenkins were connected using a webhook and
-        the Jenkins pipeline completed the Checkout, Build,
+        GitHub and Jenkins were connected using a webhook and the
+        Jenkins pipeline completed the documented Checkout, Build,
         Test and Success stages.
     </p>
 
