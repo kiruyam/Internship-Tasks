@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3 - Docker Compose</title>
+</head>
+<body>
+
+    <h1>Task 3 - Docker Compose</h1>
+
+    <h2>Objective</h2>
+    <p>
+        Use Docker Compose to run an Nginx static website with
+        separate development and production environments.
+    </p>
+
+    <h2>Tools Used</h2>
+    <p>Docker, Docker Compose, Nginx and Watchtower</p>
+
+    <h2>Process</h2>
+    <ol>
+        <li>Created a Dockerfile using the Nginx Alpine image.</li>
+        <li>Created a static website inside the site folder.</li>
+        <li>Configured development and production environment files.</li>
+        <li>Used Docker Compose to run the Nginx container.</li>
+        <li>Tested the development environment on port 8080.</li>
+        <li>Tested the production environment on port 8081.</li>
+        <li>Configured Watchtower for container update monitoring.</li>
+    </ol>
+
+    <h2>Output</h2>
+    <p>
+        The Nginx static website was successfully run using Docker Compose
+        in both development and production environments.
+    </p>
+
+    <h2>Note</h2>
+    <p>
+        During the task, the initial Watchtower image had a Docker API
+        compatibility issue. This was resolved by switching to the
+        Watchtower image used in the final setup.
+    </p>
+
+    <p>
+        <a href="../index.html">← Back to Tasks</a>
+    </p>
+
+</body>
+</html>
